@@ -1,0 +1,22 @@
+note over selain:
+käyttäjä on sivulla https://studies.cs.helsinki.fi/exampleapp/spa
+end note
+
+note over selain:
+käyttäjä kirjoittaa lomakkeen tekstikenttään "Toinen merkintä"
+end note
+
+note over selain:
+käyttäjä painaa nappia "tallenna"
+end note
+
+note over selain:
+selain suorittaa js-koodin, joka tekee kyselyn palvelimelle
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa [{ content: "Toinen merkintä", date: "2022-06-10T14:31:00.905Z" }] [{ "Content-type": "application/json" }]
+palvelin-->selain: [{ "Status Code": 201 }, ...]
+
+note over selain:
+selain suorittaa js-koodin, joka lisää uuden merkinnän muistiinpanot-listauksen alimmaksi riviksi
+end note

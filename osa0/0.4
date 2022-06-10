@@ -1,0 +1,14 @@
+note over selain:
+käyttäjä on sivulla https://studies.cs.helsinki.fi/exampleapp/notes
+end note
+
+note over selain:
+käyttäjä kirjoittaa lomakkeen tekstikenttään "Ensimmäinen merkintä"
+end note
+
+note over selain:
+käyttäjä painaa nappia "tallenna"
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note [{ note: "Ensimmäinen merkintä" }]
+palvelin-->selain: [{ "Location": "/notes", "Status Code": 302 }, ...]
